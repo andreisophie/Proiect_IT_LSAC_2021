@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+    <head>
+        <!-- Link proba: -->
+        <!-- https://www.figma.com/file/vIehokzMuDjZCY5nKUeal5/mock-up-recrutari-it?node-id=0%3A1 -->
+        <title>Bazaroo</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <!-- Latest compiled and minified CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Latest compiled JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Bootstrap icons --- RIP Glyphicons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+        <!-- scripturi formulare -->
+        <script src="HomepageForms.js"></script>
+    </head>
+    <body>
+        <div class="alert fixed" id="alerta" hidden></div>
+    
+        <div>   <!-- imagine header -->
+            <img src="Assets/Top_bg_desktop.png" class="header"/>
+        </div>
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg">   <!-- navbar float-right justify-content-end-->
+                <div class="container d-flex">
+                    <div class="navbar-brand flex-fill">
+                        <img src="Assets/Logo.png" style="width: 250px;"/>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" 
+                    aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="bi bi-list"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <button class="button buttonDarkBlue" data-bs-toggle="modal" data-bs-target="#formLogin">Logare</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="button buttonDarkBlue" data-bs-toggle="modal" data-bs-target="#formRegister">Creare cont</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="button buttonDarkBlue" onclick='location.href="#contact"'>Contact</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Formular login -->
+            <div class="modal fade" id="formLogin" data-bs-backdrop="static" data-bs-keyboard="false">  
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content modal-content-DarkBlue">
+                        <div class="modal-header border-0">
+                            <h3 class="modal-title modal-title-DarkBlue">
+                                Login
+                            </h3>
+                            <a type="button" class="modal-close-cross" data-bs-dismiss="modal">
+                                <i class="bi bi-x-lg"></i>
+                            </a>
+                        </div>
+                        <div class="modal-body">
+                            <h5>
+                                <label for="email">Email:</label><br/>
+                                <input type="text" style="width: 100%;" id="emailLogin"></input><br/>
+                                <label for="parola">Parola:</label><br/>
+                                <input type="password" style="width: 100%;" id="parolaLogin"></input><br/>
+                            </h5>
+                            Nu ai cont?<br/>
+                            <a href="" data-bs-toggle="modal" data-bs-target="#formRegister">Înregistrează-te</a>
+                        </div>
+                        <div class="modal-footer modal-footer-DarkBlue border-0">
+                            <button class="button buttonLightBlue" onclick="submitLogin()">Conectare</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Formular inregistrare -->
+            <div class="modal fade" id="formRegister" data-bs-backdrop="static" data-bs-keyboard="false">  
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content modal-content-DarkBlue">
+                        <div class="modal-header border-0">
+                            <h3 class="modal-title modal-title-DarkBlue">
+                                Register
+                            </h3>
+                            <a type="button" class="modal-close-cross" data-bs-dismiss="modal">
+                                <i class="bi bi-x-lg"></i>
+                            </a>
+                        </div>
+                        <div class="modal-body">
+                            <div class="rol">
+                                <h5>
+                                    <select name="rol" id="rolRegister">
+                                        <option value="student" id="optionStudent">Student</option>
+                                        <option value="profesor" id="optionProfesor">Profesor</option>
+                                    </select>
+                                </h5>
+                            </div>
+                            <br/>
+                            <h5>
+                                <label for="nume">Nume:</label><br/>
+                                <input type="text" style="width: 100%;" id="numeRegister"></input><br/>
+                                <label for="prenume">Prenume:</label><br/>
+                                <input type="text" style="width: 100%;" id="prenumeRegister"></input><br/>
+                                <label for="email">Email:</label><br/>
+                                <input type="text" style="width: 100%;" id="emailRegister"></input><br/>
+                                <label for="parola">Parolă:</label><br/>
+                                <input type="password" style="width: 100%;" id="parolaRegister"></input><br/>
+                                <label for="parola">Confirmare parolă:</label><br/>
+                                <input type="password" style="width: 100%;" id="confirmParolaRegister"></input><br/>
+                            </h5>
+                        </div>
+                        <div class="modal-footer modal-footer-DarkBlue border-0">
+                            <button class="button buttonLightBlue" onclick="submitRegister()">Înregistrare</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br/><br/><br/><br/>
+            <div class="row" style="padding-top: 50px;"> <!-- reclama principala -->
+                <div class="col-lg">
+                    <div class="row">
+                        <div class="col-3"></div>
+                        <div class="col-6">
+                            <div style="margin: auto;">
+                                <h1>Învățatul nu a fost niciodată mai simplu!</h1>
+                                <h3>Platforma ideală pentru meditații online, atât pentru profesori, cât si pentru studenți.</h3><br/>
+                            </div>
+                        </div>
+                        <div class="col-3"></div>
+                    </div>
+                </div>
+                <div class="col-lg">
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col-8" style="margin: auto;">
+                            <img src="Assets/Asset_1.png" style="width: 100%; margin: auto;">
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <div class="row">   <!-- Meniu inscriere -->
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8">
+                    <div class="container" style="padding: 0;">
+                        <div class="container shadow"></div>
+                        <div class="container big_blue" style="left: 50px; top: 20px; padding: 0;">
+                            <div class="row">
+                                <div class="col text1">
+                                    Cum funcționează?
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col text2">
+                                    Știi prea multe și vrei să predai?<br/> Înscrie-te ca profesor.
+                                </div>
+                                <div class="col text2">
+                                    Știi prea puține si vrei să înveți?<br/> Înscrie-te ca student.
+                                </div>
+                            </div>
+                            <div class="row" style="text-align: center;">
+                                <div class="col">
+                                    <button class="button buttonLightBlue" data-bs-toggle="modal" data-bs-target="#formRegister" onclick="makeOptionActive('Profesor')">Predau</button>
+                                </div>
+                                <div class="col">
+                                    <button class="button buttonLightBlue" data-bs-toggle="modal" data-bs-target="#formRegister" onclick="makeOptionActive('Student')">Învăț</button>
+                                </div>
+                            </div>
+                            <br/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2"></div>
+            </div>
+            <br/><br/><br/><br/>
+
+            <div class="row">   <!-- carousel -->
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <h1>Ce zic utilizatorii?</h1>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+            <br/>
+            <div class="carousel-item" id="templateCarousel"> <!-- template element carousel -->
+                <div class="col-lg-6">
+                    <div class="user-feedback">
+                        <img class="user-icon" src="Assets/user_icon.png"/>
+                        <span id="nume"></span><br/><br/><span id="mesaj"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-10">
+                    <div class="container-fluid">
+                        <div class="row mx-auto my-auto">
+                            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner" role="listbox" id="carousel-parent">
+                                    <!-- script-ul va adauiga elemente direct din server -->
+                                </div>
+                                <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                                    <img src="Assets/left_arrow.png" class="control-arrow"/>
+                                </a>
+                                <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                                    <img src="Assets/right_arrow.png" class="control-arrow"/>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-1"></div>
+            </div>
+            <br/>
+            <!--scripts loaded here-->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+            <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+            <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.3.1/darkly/bootstrap.min.css"> -->
+            <link rel="stylesheet" href="style_carousel.css">
+            <script src="carousel.js"></script>
+
+            <div class="row formular" id="contact">  <!-- Formular contact -->
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4">
+                    <div class="container" style="padding: 30px;">
+                        <h3 style="text-align: center; font-weight: bold;">Întâmpini dificultăți?<br/>Contactează-ne!</h3>
+                        <br/>
+                        <label for="nume" style="font-weight: bold;">Nume:</label><br/>
+                        <input type="text" style="width: 100%;" id="numeContact"></input>
+                        <br/><br/>
+                        <label for="email" style="font-weight: bold;">E-mail:</label><br/>
+                        <input type="text" style="width: 100%;" id="emailContact"></input>
+                        <br/><br/>
+                        <label for="mesaj" style="font-weight: bold;">Mesaj:</label><br/>
+                        <textarea rows="4" style="width: 100%;" id="mesajContact"></textarea>
+                        <br/><br/>
+                        <div style="text-align: center;">
+                            <button class="button buttonLightBlue" onclick="submitContact()">Trimite</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4"></div>
+            </div>
+        </div>
+            <div class="row"> <!-- footer -->
+                <div class="col-md-10 d-flex flex-row-reverse align-items-end footer">
+                    <div class="img-container">
+                        <a href="https://twitter.com/fullcathouse" target="_blank">
+                            <img src="Assets/Twitter_icon.png" class="icon"/>
+                        </a>
+                    </div>
+                    <div class="img-container">
+                        <a href="https://www.instagram.com/dailycatclub/" target="_blank">
+                            <img src="Assets/IG_icon.png" class="icon"/>
+                        </a>
+                    </div>
+                    <div class="img-container">
+                        <a href="https://www.facebook.com/cutecats4u" target="_blank">
+                            <img src="Assets/FB_icon.png" class="icon"/>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    </body>
+</html>

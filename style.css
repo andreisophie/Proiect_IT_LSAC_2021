@@ -1,0 +1,272 @@
+@font-face {
+    font-family: "Droid Sans";
+    src: url("Assets/DroidSans.woff");
+}
+
+@font-face {
+    font-family: "Droid Sans";
+    src: url("Assets/DroidSans-Bold.woff");
+    font-weight: bold;
+}
+
+body {
+    background-color: #E5E5E5;
+}
+
+* {
+    font-family: "Droid Sans";
+}
+
+.main-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+div.fixed {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    width: 300px;
+    z-index: 2;
+}
+
+img.header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55%;
+    z-index: -1;
+}
+
+.nav-item {
+    padding: 10px;
+}
+
+.buttonDarkBlue {
+    background-color: #272A45;
+    border: 2px solid #272A45;
+    border-radius: 30px;
+    
+    padding: 4px;
+    width: 145px;
+    margin: auto;
+    
+
+    color: white;
+    white-space: nowrap;
+}
+
+.buttonDarkBlue:hover {
+    background-color: #adb1d1;
+    color: #272A45;
+    border: 2px solid #272A45;
+    font-weight: bold;
+}
+
+.modal-content-DarkBlue {
+    background: #272A45 !important;
+    border-radius: 40px !important;
+    color: white;
+}
+
+.modal-content-DarkBlue a {
+    color: white;
+}
+
+.modal-title-DarkBlue, .modal-footer-DarkBlue {
+    margin: auto;
+}
+
+div.rol {
+    text-align: right;   
+}
+select#rolRegister {
+    background-color: #DBDBDB;
+    border-radius: 40px;
+    padding: 5px;
+}
+
+div.modal-body input {
+    background-color: #DBDBDB;
+}
+
+@media screen and (max-width: 992px) {
+    h1, h3 {
+        text-align: center;
+    }
+}
+
+.shadow {
+    background: linear-gradient(180deg, #B3F3FF 0%, #AEC5FF 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: transparent;
+    box-shadow: -4px 4px grey;
+    border-radius: 40px;
+    z-index: -1;
+}
+
+.big_blue {
+    background-color: #272A45;
+    width: 100%;
+    align-items: center;
+    color: white;
+    border-radius: 40px;
+    position: relative;
+    top: 5vw;
+    box-shadow: -30px -10px 25px #AEC5FF, -40px -30px #e6fbff, -40px -28px 2px grey;
+    z-index: 1;
+}
+
+.text1 {
+    text-align: center;
+    font-size: 2.4em;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.text2 {
+    text-align: center;
+    font-size: 1.2em;
+    padding: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .text1 {
+        font-size: 2em;
+    }
+    
+    .text2 {
+        font-size: 1em;
+    }
+}
+
+.buttonLightBlue {
+    background: linear-gradient(180deg, #AFD0FF 0%, #B2EEFF 99.99%, rgba(175, 209, 255, 0) 100%);
+    border: 2px solid #B2EEFF;
+    border-radius: 30px;
+    padding: 10px;
+    width: 150px;
+}
+
+.buttonLightBlue:hover {
+    background: #404572;
+    color: white;
+}
+
+.text3 {
+    font-size: 3em;
+}
+
+@media screen and (max-width: 992px) {
+    .formular {
+        background-size: 100%;
+    }
+}
+
+.user-feedback {
+    background: linear-gradient(180deg, #B1E0FF 17.19%, #AEC0FF 71.35%);
+    border-radius: 40px;
+    width: 400px;
+    height: 400px;
+    padding: 50px;
+    font-size: 1.5em;
+    margin: auto;
+}
+
+.user-icon {
+    width: 20%;
+    padding: 5px;
+    vertical-align: text-bottom;
+}
+
+.control-arrow {
+    width: 20%;
+}
+
+.formular {
+    background-image: url("Assets/Children_drawing.png");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.footer {
+    flex-shrink: 0;
+    background-image: url("Assets/Footer_desktop.png");
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: bottom left;
+    min-height: 250px;
+    margin-bottom: 0;
+}
+
+.row {
+    flex: 1 0 auto;
+}
+
+.img-container {
+    width: 75px;
+    padding: 10px;
+    padding-bottom: 30px;
+}
+
+img.icon {
+    width: 100%;
+    border-radius: 100px;
+    box-shadow: 5px 5px 10px grey;
+}
+
+/* styles pentru medicatii studenti */
+
+.selectLightBlue {
+    background: linear-gradient(180deg, #B2EEFF 0%, #AEC0FF 100%);
+    border-radius: 30px;
+    padding: 5px;
+}
+
+.selectLightBlue option {
+    background: #b0d9ff;
+}
+
+.lightBlue {
+    background: linear-gradient(180deg, #B1E0FF 17.19%, #AEC0FF 71.35%);
+    border-radius: 40px;
+    padding: 20px;
+}
+
+.row-meditatii {
+    padding-bottom: 5px;;
+}
+
+.modal-content-LightBlue {
+    background: linear-gradient(180deg, #B1E0FF 17.19%, #AEC0FF 71.35%) !important;
+    border-radius: 40px !important;
+}
+
+.modal-content-LightBlue a {
+    color: black;
+}
+
+.modal-footer-LightBlue {
+    margin: right;
+}
+
+.select-gray {
+    background: #DBDBDB;
+    border-radius: 30px;
+    padding: 5px;
+}
+
+.select-gray option {
+    background: #DBDBDB;
+}
+
+.textarea-gray {
+    width: 100%;
+    padding: 15px;
+    background: #DBDBDB;
+    border-radius: 30px;
+}
